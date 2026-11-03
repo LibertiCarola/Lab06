@@ -83,16 +83,14 @@ class View:
             ft.Divider(),
 
             # Sezione 3
-            ft.Text("Strumenti", size=20),
-            ft.Row(spacing=200,
-                   controls=[btn_mostra_strumenti],
-                   alignment=ft.MainAxisAlignment.CENTER),
+            ft.Row(spacing=20,
+                   controls=[ft.Text("Strumenti", size=20),btn_mostra_strumenti]),
             self.lista_strumenti,
             ft.Divider(),
 
             # Sezione 4
             ft.Text('Cerca Strumenti per Tipo', size=20),
-            ft.Row(spacing=200,
+            ft.Row(spacing=20,
                    controls=[self.input_tipo_strumento, brn_cerca_per_tipo]
                    ),
             self.lista_strumenti_ricerca
