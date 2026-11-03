@@ -1,11 +1,11 @@
 class Strumento:
-    def __init__(self, codice, tipo, marca, anno_acquisto, valore, disponibile=True):
+    def __init__(self, codice, tipo, marca, anno_acquisto, valore):
         self.codice = codice
         self.tipo = tipo
         self.marca = marca
         self.anno_acquisto = int(anno_acquisto)
         self.valore = float(valore)
-        self.disponibile = disponibile
+        self.disponibile = True
 
     def __eq__(self, other):
         return isinstance(other, Strumento) and self.codice == other.codice

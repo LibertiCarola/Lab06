@@ -28,4 +28,29 @@ class Controller:
         self._view.update()
 
     # Altre Funzioni Event Handler
-    # TODO
+    def mostra_strumenti(self, e):
+        lista_strum = self._model.get_strumenti()
+        # print('funziona')
+        if lista_strum is not None:
+            self._view.lista_strumenti.controls.clear()
+            for strum in lista_strum:
+                self._view.lista_strumenti.controls.append(ft.Text(f'{strum}'))
+            self._view.update()
+        else:
+            print('si è verificato un errore nella lettura del database')
+
+
+    def pulsante_cerca_per_tipo(self, e):
+        self._view.lista_strumenti_ricerca.controls.clear()
+        tipo_st = self._view.input_tipo_strumento.value
+        T = tipo_st[0].upper()
+        tipo_strumento = T + tipo_st[1:]
+        lista_strum = self._model.get_strumenti()
+        for strumento in lista_strum:
+            if tipo_strumento in strumento.tipo:
+                self._view.lista_strumenti_ricerca.controls.append(ft.Text(f'{strumento}'))
+        self._view.update()
+
+
+
+
